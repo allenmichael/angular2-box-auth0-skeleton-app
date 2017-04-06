@@ -141,7 +141,7 @@ export class BoxHttp {
 
 export function defaultFactory(http: Http, auth: AuthService, options: RequestOptions) {
 
-    const EXPIRES_IN = 3000000;
+    const EXPIRES_IN = BOX_CONFIG.tokenExpirationPeriod;
 
     const DEFAULT_REFRESH_TOKEN_FUNCTION = () => {
         let token = auth.retrieveIdToken();
@@ -149,7 +149,7 @@ export function defaultFactory(http: Http, auth: AuthService, options: RequestOp
     };
 
     const DEFAULT_BOX_TOKEN_CACHE: IBoxTokenCache = {
-        boxTokenKey: 'box_appuser_token',
+        boxTokenKey: BOX_CONFIG.boxTokenStorageKey,
         getToken(): Observable<IBoxToken> {
             try {
                 let boxToken = JSON.parse(localStorage.getItem(this.boxTokenKey)) as IBoxToken;

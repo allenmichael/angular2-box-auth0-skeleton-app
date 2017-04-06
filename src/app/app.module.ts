@@ -16,7 +16,6 @@ import { BOX_CONFIG } from './config/box/box.config';
 import { AppRoutingModule } from './app-routing.module';
 import { AppViewComponent } from './components/app-view/app-view.component';
 import { UserViewComponent } from './components/user-view/user-view.component';
-import { FooterComponent } from './components/shared/footer/footer.component';
 
 import { AuthService } from './services/auth/auth.service';
 import { CallbackComponent } from './components/callback/callback.component';
@@ -46,7 +45,6 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     AppViewComponent,
     UserViewComponent,
     CallbackComponent,
-    FooterComponent,
     WelcomeViewComponent,
     FolderViewComponent,
     AddNewFolderComponent,

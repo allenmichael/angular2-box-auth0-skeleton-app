@@ -1,70 +1,9 @@
-// import { Injectable } from '@angular/core';
-// import { tokenNotExpired } from 'angular2-jwt';
-// import { Router } from '@angular/router';
-// import { authConfig } from '../../config/auth/auth.config';
-
-// // Avoid name not found warnings
-// declare var Auth0Lock: any;
-
-// @Injectable()
-// export class Auth {
-//   // Configure Auth0
-//   lock = new Auth0Lock(authConfig.clientID, authConfig.domain, {});
-//   //Store profile object in auth class
-//   userProfile: any;
-
-//   constructor(private router: Router) {
-//     // Set userProfile attribute if already saved profile
-//     this.userProfile = JSON.parse(localStorage.getItem('profile'));
-
-//     // Add callback for lock `authenticated` event
-//     this.lock.on("authenticated", (authResult) => {
-//       localStorage.setItem('id_token', authResult.idToken);
-
-//       // Fetch profile information
-//       this.lock.getProfile(authResult.idToken, (error, profile) => {
-//         if (error) {
-//           // Handle error
-//           alert(error);
-//           return;
-//         }
-
-//         localStorage.setItem('profile', JSON.stringify(profile));
-//         this.userProfile = profile;
-
-//         // Redirect if there is a saved url to do so.
-//         
-//       });
-//     });
-//   }
-
-//   public login() {
-//     // Call the show method to display the widget.
-//     this.lock.show();
-//   };
-
-//   public authenticated() {
-//     // Check if there's an unexpired JWT
-//     // It searches for an item in localStorage with key == 'id_token'
-//     return tokenNotExpired();
-//   };
-
-
-
-//   public logout() {
-//     // Remove token from localStorage
-//     localStorage.removeItem('id_token');
-//     localStorage.removeItem('profile');
-//     this.userProfile = undefined;
-//     this.router.navigate(['']);
-//   };
-// };
-
 import { Injectable } from '@angular/core';
 import { AUTH_CONFIG } from '../../config/auth/auth.config';
 import { JwtHelper } from 'angular2-jwt';
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/filter';
+import { BOX_CONFIG } from '../../config/box/box.config';
 
 // Avoid name not found warnings
 declare var Auth0Lock: any;
@@ -159,6 +98,8 @@ export class AuthService {
     localStorage.removeItem(AUTH_ID_TOKEN_STORAGE_KEY);
     localStorage.removeItem(AUTH_PROFILE_STORAGE_KEY);
     localStorage.removeItem(AUTH_REDIRECT_URL);
+    localStorage.removeItem(BOX_CONFIG.boxTokenStorageKey);
+
     // Go back to the home route
     this.router.navigate(['/']);
   }

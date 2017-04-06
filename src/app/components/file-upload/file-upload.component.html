@@ -1,7 +1,15 @@
 <form class="form-group">
-  <label for="uploadInput">Add New Files</label>
-  <input type="file" class="form-control" name="uploadInput" ng2FileSelect [uploader]="uploader" multiple />
-  <div id='upload-button' (click)="uploadFiles()" class="btn-floating btn-large waves-effect waves-light">
-    <i class="material-icons">add</i>
+  <div class="row">
+    <div class="col s12">
+      <label for="uploadInput">Add New Files</label>
+    </div>
+    <div class="input-field col s8">
+      <input type="file" class="form-control" name="uploadInput" ng2FileSelect [uploader]="uploader" multiple />
+    </div>
+    <div class="col s4">
+      <div id='upload-button' (click)="uploadFiles()" class="btn-floating btn-large waves-effect waves-light">
+        <i class="material-icons">add</i>
+      </div>
+    </div>
   </div>
 </form>
