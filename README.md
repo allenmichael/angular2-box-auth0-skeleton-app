@@ -1,4 +1,4 @@
-# box-auth0-swift-skeleton-app
+# box-auth0-angular2-skeleton-app
 
 ## Immediate Build and Run
 This project includes sample configuration included so that you can download and immediately run the app.
@@ -21,7 +21,7 @@ The remaining documentation describes how to switch the existing credentials to 
     * Select "Custom App" and press "Next"
     * Select "Server Authentication" and press "Next"
         * *This sample demonstrates a server-to-server integration*
-    * Name the application "Box Auth0 Swift App - YOUR NAME"
+    * Name the application "Box Auth0 Angular2 App - YOUR NAME"
         * *Application names must be unique across Box*
     * Press "Create App" and then "View Your App"
     * Check the "Manage users" scope and press "Save Changes"
