@@ -66,6 +66,7 @@ The remaining documentation describes how to switch the existing credentials to 
     * Domain
     * Client ID
 6. You'll need to register a callback URL for Auth0's Lock library. Follow the steps outlined [here](https://auth0.com/docs/quickstart/spa/angular2#configure-callback-urls)
+ * This project uses `http://localhost:4200/callback`
 
 #### Step 2. Install the Box Platform Extension
 1. Within your Auth0 Dashboard, click the *Extensions* tab.
