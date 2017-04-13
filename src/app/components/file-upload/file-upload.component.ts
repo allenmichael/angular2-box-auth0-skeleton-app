@@ -13,6 +13,7 @@ import { BoxItemCollection } from "../../models/box/box-item-collection.model";
 export class FileUploadComponent implements OnInit {
   @Input()
   currentFolder: BoxFolder;
+
   uploader: FileUploader = new FileUploader({ url: 'https://upload.box.com/api/2.0/files/content' });
 
   @Output()
@@ -54,6 +55,11 @@ export class FileUploadComponent implements OnInit {
           } catch (e) {
 
           }
+        }
+        this.uploader.onCompleteAll = () => {
+          setTimeout(() => {
+            this.uploader.clearQueue();
+          }, 2000)
         }
       });
   }
