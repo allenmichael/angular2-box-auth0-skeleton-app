@@ -1,3 +1,5 @@
+import { BoxUserStub } from "./box-user-stub.model";
+
 export class BoxItem {
     type: string;
     id: string;
@@ -12,9 +14,9 @@ export class BoxItem {
     created_at?: Date;
     modified_at?: Date;
     size?: Number;
-    created_by?: Object;
-    modified_by?: Object;
-    owned_by?: Object;
+    created_by?: BoxUserStub;
+    modified_by?: BoxUserStub;
+    owned_by?: BoxUserStub;
     parent?: BoxItem;
     item_status?: string;
 }

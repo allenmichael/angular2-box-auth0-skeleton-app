@@ -27,6 +27,8 @@ import { BoxExplorerComponent } from './components/box-explorer/box-explorer.com
 import { FileViewComponent } from './components/file-view/file-view.component';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
 import { PreviewModalComponent } from './components/preview-modal/preview-modal.component';
+import { BoxFileService } from "./services/box/box-file-service";
+import { FileDetailViewComponent } from "./components/file-detail-view/file-detail-view.component";
 
 // export function boxClientServiceFactory(http: Http, auth: AuthService) {
 //   let refreshTokenFunction = () => {
@@ -53,7 +55,8 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
     BoxExplorerComponent,
     FileViewComponent,
     FileUploadComponent,
-    PreviewModalComponent
+    PreviewModalComponent,
+    FileDetailViewComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +69,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   ],
   providers: [
     BoxFolderService,
+    BoxFileService,
     AuthService,
     BOX_CLIENT_PROVIDER,
     // {

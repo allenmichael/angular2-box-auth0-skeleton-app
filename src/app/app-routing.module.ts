@@ -7,6 +7,7 @@ import { UserViewComponent } from './components/user-view/user-view.component';
 import { FolderViewComponent } from './components/folder-view/folder-view.component';
 import { CallbackComponent } from './components/callback/callback.component';
 import { BoxExplorerComponent } from "./components/box-explorer/box-explorer.component";
+import { FileDetailViewComponent } from "./components/file-detail-view/file-detail-view.component";
 const routes: Routes = [
   {
     path: '',
@@ -30,6 +31,11 @@ const routes: Routes = [
   {
     path: 'explorer/folder/:id',
     component: BoxExplorerComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'explorer/file/:id',
+    component: FileDetailViewComponent,
     canActivate: [AuthGuard]
   },
   {
